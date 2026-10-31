@@ -76,17 +76,71 @@
         .app-icon-large {
             width: 100px;
             height: 100px;
-            background-color: #e8f0fe;
             border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.2rem;
+            object-fit: cover;
+            display: block;
             flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            border: 1px solid var(--border-color);
+            background-color: #e8f0fe;
         }
         .app-title h1 { font-size: 2rem; margin-bottom: 8px; }
         .app-title p { color: var(--text-light); font-size: 1.05rem; }
         .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 25px 0 35px; }
+
+        /* SCREENSHOTS */
+        .screenshots-section {
+            margin: 30px 0 35px;
+        }
+        .section-subtitle {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .screenshots-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 6px 2px 18px 2px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshots-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-track {
+            background: #eef1f5;
+            border-radius: 4px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-thumb {
+            background: #c2c8d0;
+            border-radius: 4px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-thumb:hover {
+            background: #9aa0a6;
+        }
+        .screenshot-card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            background: #f8f9fa;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+        }
+        .screenshot-card img {
+            display: block;
+            height: 420px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
         .detail-content {
             background: var(--white);
             padding: 35px;
@@ -124,6 +178,7 @@
             .app-header { flex-direction: column; align-items: flex-start; }
             .app-title h1 { font-size: 1.6rem; }
             .detail-content { padding: 25px 20px; }
+            .screenshot-card img { height: 320px; }
         }
     </style>
 </head>
@@ -132,7 +187,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo">Madhushan Studios</a>
             <div class="nav-links">
-                <a href="index.html#about">About</a>
+                <a href="index.html#team">Team</a>
                 <a href="index.html#apps">Apps</a>
                 <a href="index.html#contact">Contact</a>
             </div>
@@ -143,7 +198,7 @@
         <a href="index.html#apps" class="back-link">← Back to Apps</a>
 
         <div class="app-header">
-            <div class="app-icon-large">✅</div>
+            <img src="https://play-lh.googleusercontent.com/VMR6_UUwS9ABCM4vSwOJ-vAzoeyW_CvWBXtwa_FwvtP8-VIpZjMp_d6HTRlzdtipg4bOJ2V2gnKrwXPkAV-R=w480-h960-rw" alt="Todo List Icon" class="app-icon-large">
             <div class="app-title">
                 <h1>Todo List</h1>
                 <p>Smart To-Do List & Task Reminder App.</p>
@@ -153,6 +208,31 @@
         <div class="action-buttons">
             <a href="https://play.google.com/store/apps/details?id=com.todolist.todo_list" target="_blank" class="btn">Get on Google Play</a>
             <a href="https://01nimantha.github.io/Todo-List-Privacy-Policy/" target="_blank" class="btn btn-outline">Privacy Policy</a>
+        </div>
+
+        <!-- APP SCREENSHOTS -->
+        <div class="screenshots-section">
+            <h2 class="section-subtitle">App Screenshots</h2>
+            <div class="screenshots-scroll">
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/Dqam4Aj3TsJwu9ZmCpj4t_vjuIlij7LDOk5MQe48e-eTammOBAjsob4ZMB3ijBY_QqgEsCHfS9KHWn-4ZT9SOw=w1052-h592-rw" alt="Todo List Screenshot 1" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/oUi5XGZ8Znta-dDSoqlbz6L9IMTXV_db4cPp0CzZ4wFTxGuHUWfhiXHNMDqREKV4SteZcjNVqPsPFGC1gocwXA=w1052-h592-rw" alt="Todo List Screenshot 2" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/3BD5a7CmzaPPKFjgk3b3Pv9PxZtiLHFjN2raevnDD49nkFvZ99i9fNhMMe730nb2hq7sNdaI_nEU-j-0JdqOdfk=w1052-h592-rw" alt="Todo List Screenshot 3" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/B2K4xFbeGr98-bKfo2hHjx_gFf1H-m-Tr7b4dfqwUl0qoX4UOEJpuMTlj7Un99SGg1YXldEJpd0OYEELiGkqO7A=w1052-h592-rw" alt="Todo List Screenshot 4" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/EhdFUbhvAazjs5YWYTWkq8Vc8bClDgOVmCw0bFifEpmWZOO07vu3Vu7EZFoBuzHVIevYhntWt8Wkm5j0wpfuL5c=w1052-h592-rw" alt="Todo List Screenshot 5" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://play-lh.googleusercontent.com/4vAZil3UhzKsHN4qy-cqp5PQ2f9anPt0sZM6FEvgEIOG9868KaR0UVVExSdjbtC6XdX1ptWqAbT5mDXBTHlzAAg=w1052-h592-rw" alt="Todo List Screenshot 6" loading="lazy">
+                </div>
+            </div>
         </div>
 
         <div class="detail-content">
@@ -190,7 +270,7 @@
     <footer>
         <p>&copy; 2024 Madhushan Studios. All rights reserved.</p>
         <div style="margin-top: 15px;">
-            <a href="index.html#about">About</a>
+            <a href="index.html#team">Team</a>
             <a href="index.html#apps">Apps</a>
             <a href="index.html#contact">Contact</a>
         </div>

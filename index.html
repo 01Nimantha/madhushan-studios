@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madhushan Studios - Mobile App Developer</title>
-    <meta name="description" content="Official developer website for Madhushan Studios. We build high-quality Android applications.">
+    <meta name="description" content="Official developer website for Madhushan Studios. We build high-quality Android applications for cat lovers, professionals, and productivity enthusiasts.">
     
-    <!-- Google Fonts for a professional look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS RESET & VARIABLES */
         :root {
-            --primary-color: #1a73e8; /* Google Blue */
+            --primary-color: #1a73e8;
+            --primary-dark: #174ea6;
             --text-dark: #202124;
             --text-light: #5f6368;
             --bg-light: #f8f9fa;
             --white: #ffffff;
+            --border-color: #e0e0e0;
         }
 
         * {
@@ -41,10 +41,10 @@
         }
 
         a:hover {
-            color: #174ea6;
+            color: var(--primary-dark);
         }
 
-        /* HEADER / NAV */
+        /* HEADER */
         header {
             background-color: var(--white);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -78,12 +78,12 @@
             color: var(--primary-color);
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             background-color: var(--white);
             padding: 80px 20px;
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
@@ -107,21 +107,35 @@
             border-radius: 6px;
             font-weight: 600;
             transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
         }
 
         .btn:hover {
-            background-color: #174ea6;
+            background-color: var(--primary-dark);
             color: var(--white);
         }
 
-        /* MAIN CONTENT CONTAINER */
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* CONTAINER */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        /* SECTION TITLES */
         .section-title {
             font-size: 1.8rem;
             margin-bottom: 2rem;
@@ -133,7 +147,7 @@
         /* APPS GRID */
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
@@ -143,13 +157,15 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
             border: 1px solid #eee;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .app-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
         .app-icon {
@@ -157,31 +173,79 @@
             height: 80px;
             background-color: #e8f0fe;
             border-radius: 20px;
-            margin: 0 auto 20px auto;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            font-weight: bold;
+            font-size: 2.5rem;
         }
 
         .app-card h3 {
             margin-bottom: 10px;
             font-size: 1.4rem;
+            color: var(--text-dark);
         }
 
-        .app-card p {
+        .app-card .short-desc {
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 0.95rem;
+            flex-grow: 1;
         }
 
-        /* CONTACT SECTION */
+        .app-card .full-desc {
+            display: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f1f3f4;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .app-card .full-desc.open {
+            display: block;
+        }
+
+        .app-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .app-links .btn {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .app-links .btn-outline {
+            padding: 6px 14px;
+            font-size: 0.85rem;
+        }
+
+        .privacy-link {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 10px;
+            display: block;
+        }
+
+        .privacy-link a {
+            color: var(--text-light);
+            text-decoration: underline;
+        }
+
+        .privacy-link a:hover {
+            color: var(--primary-color);
+        }
+
+        /* CONTACT */
         .contact-section {
             background: var(--white);
             padding: 60px 20px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border-color);
         }
 
         .contact-content {
@@ -217,11 +281,24 @@
             color: var(--white);
         }
 
+        .footer-privacy-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 20px;
+        }
+
+        .footer-privacy-list a {
+            font-size: 0.85rem;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; } /* Simple hide on mobile for clean look */
+            .nav-links { display: none; }
             .nav-container { justify-content: center; }
+            .apps-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -239,16 +316,16 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero">
         <h1>Madhushan Studios</h1>
-        <p>Creating innovative and user-friendly Android applications for everyone.</p>
+        <p>Creating innovative and user-friendly Android applications for cat lovers, professionals, and productivity enthusiasts.</p>
         <a href="#apps" class="btn">View Our Apps</a>
     </section>
 
     <div class="container">
         
-        <!-- ABOUT SECTION -->
+        <!-- ABOUT -->
         <section id="about">
             <h2 class="section-title">About the Developer</h2>
             <p style="font-size: 1.1rem; color: var(--text-light); max-width: 800px;">
@@ -260,25 +337,130 @@
         
         <br><br>
 
-        <!-- APPS SECTION -->
+        <!-- APPS -->
         <section id="apps">
             <h2 class="section-title">Our Applications</h2>
             <div class="apps-grid">
-                
-                <!-- APP CARD 1 (Replace with your real app) -->
+
+                <!-- APP 1: Cat Tap Hunt -->
                 <div class="app-card">
-                    <div class="app-icon">A</div>
-                    <h3>App Name 1</h3>
-                    <p>Short description of what your app does. E.g., A simple tool to manage your daily tasks efficiently.</p>
-                    <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Coming Soon</a>
+                    <div class="app-icon">🐱</div>
+                    <h3>Cat Tap Hunt: Kitty Game</h3>
+                    <p class="short-desc">Cat hunting game with auto video recording, realistic prey & custom settings!</p>
+                    <div class="full-desc" id="desc-cat">
+                        <strong>Full Description:</strong><br>
+                        🐱 Cat Tap Hunt: Kitty Game — The Ultimate Hunting Training Game for Your Cat!<br><br>
+                        Turn your phone into the ultimate cat toy! Cat Tap Hunt is a thrilling hunting simulation designed to awaken your cat's natural instincts. Watch your feline friend tap, swipe, and pounce on realistic prey.<br><br>
+                        🎯 <strong>HOW TO PLAY:</strong><br>
+                        • Choose your prey from unique animals<br>
+                        • Your cat catches the target<br>
+                        • Score points and watch the hunt unfold<br>
+                        • Customize speed, size, and number of prey<br><br>
+                        🐾 <strong>EXCITING PREY ANIMALS:</strong> Bird, Squirrel, Frog, Porcupine, Mouse, Fox, Praying Mantis, Rabbit, Mole, Salamander, Cockroach.<br><br>
+                        ✨ <strong>KEY FEATURES:</strong><br>
+                        🎮 Infinite Gameplay<br>
+                        🎥 Automatic Video Recording<br>
+                        📊 Score Tracking<br>
+                        ⚙️ Fully Customizable<br>
+                        📳 Vibration Feedback<br>
+                        🎵 Immersive Audio<br>
+                        🌙 Beautiful Visuals<br><br>
+                        📹 <strong>VIDEO RECORDING FEATURE:</strong> Auto-delete old recordings (1-30 days), select/delete multiple clips, share to WhatsApp/Instagram/Facebook, thumbnail previews.<br><br>
+                        🎨 <strong>CUSTOMIZE:</strong> Character Size (150px–320px), Movement Speed (slow to lightning fast), Character Count (1–8 prey), Per-animal settings.<br><br>
+                        🐈 <strong>PERFECT FOR:</strong> Cat owners, kitten training, keeping indoor cats active, bonding time.<br><br>
+                        💡 <strong>PRO TIPS:</strong> Start with slower prey like Mouse for kittens, increase speed as your cat improves, use a screen protector, supervise play sessions, try different prey.<br><br>
+                        🔒 <strong>PRIVACY & PERMISSIONS:</strong> Camera/Microphone only for optional video recording. Storage for saving clips. No personal data collection. No ads during gameplay.<br><br>
+                        🐱 <strong>ABOUT:</strong> Created by cat lovers, for cat lovers. Our mission is to provide a safe, fun, and stimulating digital hunting experience.
+                    </div>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.vrnt.cat_tap_hunt_kitty_game" target="_blank" class="btn">Get on Google Play</a>
+                        <button class="btn btn-outline" onclick="toggleDesc('desc-cat', this)">Read More</button>
+                    </div>
+                    <span class="privacy-link">Privacy: <a href="https://01nimantha.github.io/Cat-Tap-Hunt-Kitty-Game-Privacy-Policy/" target="_blank">View Policy</a></span>
                 </div>
 
-                <!-- APP CARD 2 (Replace with your real app) -->
+                <!-- APP 2: Calculator -->
                 <div class="app-card">
-                    <div class="app-icon">B</div>
-                    <h3>App Name 2</h3>
-                    <p>Short description of what your app does. E.g., The best way to track your fitness goals.</p>
-                    <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Coming Soon</a>
+                    <div class="app-icon">🧮</div>
+                    <h3>Calculator</h3>
+                    <p class="short-desc">Simple & Smart Calculator for Quick and Accurate Calculations.</p>
+                    <div class="full-desc" id="desc-calc">
+                        <strong>Full Description:</strong><br>
+                        📱 The Calculator App is a modern, user-friendly, and responsive calculator designed to work seamlessly on both mobile devices and tablets. It combines a clean interface with advanced features like history tracking.<br><br>
+                        Built with Flutter, it adapts automatically to different screen sizes:<br>
+                        📲 <strong>Mobile layout:</strong> Simple, single-screen design with easy navigation to history.<br>
+                        💻 <strong>Tablet layout:</strong> Split-screen mode showing the calculator on one side and the history panel on the other.<br><br>
+                        ✨ <strong>Key Features:</strong><br>
+                        ✅ Basic & Scientific Calculations (+, −, ×, ÷, √, percentages)<br>
+                        ✅ Beautiful User Interface (gradient keypad, 3D shadows, dark theme)<br>
+                        ✅ Calculation History with Hive Storage (auto-saved, clear with confirmation, refresh support)<br>
+                        ✅ Responsive Design (mobile & tablet dual-pane)<br>
+                        ✅ Offline First (no internet required, fast & lightweight)<br>
+                        ✅ Custom Branding (personalized icon, splash screen)<br><br>
+                        🛠️ <strong>Tech Stack:</strong> Flutter (Dart), Hive (NoSQL), Math Expressions Package, Responsive UI (LayoutBuilder), Custom Splash & Icons.<br><br>
+                        📊 <strong>Example Use Cases:</strong> Students solving math problems, professionals doing finance/percentage calculations, anyone needing a fast, reliable calculator with history.<br><br>
+                        🚀 <strong>Why Choose This App?</strong> Unlike standard calculators, this app is responsive, offline, stylish, and history-enabled. It helps you stay organized by remembering your past calculations.
+                    </div>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.ceynext.calculator_app" target="_blank" class="btn">Get on Google Play</a>
+                        <button class="btn btn-outline" onclick="toggleDesc('desc-calc', this)">Read More</button>
+                    </div>
+                    <span class="privacy-link">Privacy: <a href="https://01ruwantha.github.io/calculator-privacy-policy/" target="_blank">View Policy</a></span>
+                </div>
+
+                <!-- APP 3: Todo List -->
+                <div class="app-card">
+                    <div class="app-icon">✅</div>
+                    <h3>Todo List</h3>
+                    <p class="short-desc">Smart To-Do List & Task Reminder App.</p>
+                    <div class="full-desc" id="desc-todo">
+                        <strong>Full Description:</strong><br>
+                        Stay organized and boost your productivity with our powerful and user-friendly To-Do List & Task Reminder app. Whether you're managing daily tasks, planning projects, or setting personal goals, this app helps you stay focused and on track — anytime, anywhere.<br><br>
+                        🔑 <strong>Key Features:</strong><br>
+                        ✅ Easy Task Management — Quickly add, edit, complete, or delete tasks with a simple tap.<br>
+                        ✅ Task Completion History — Review completed tasks and track your productivity over time.<br>
+                        ✅ Responsive Layout for Tablets & Phones — Seamless experience on both devices.<br>
+                        ✅ Clean, Minimal UI — Distraction-free interface designed for clarity and focus.<br>
+                        ✅ Lightweight & Fast — Built with Flutter for speed and smooth performance.<br><br>
+                        🎯 <strong>Why Choose This App?</strong><br>
+                        1. Boost your productivity with structured task management<br>
+                        2. Keep your life organized with a personal task planner<br>
+                        3. Works great for students, professionals, and anyone with goals<br>
+                        4. Review your progress through the task history feature<br><br>
+                        Whether you're creating a shopping list, planning your week, or managing work projects, this app is your ultimate task organizer and daily planner — all in one.<br><br>
+                        Download now and start getting things done!
+                    </div>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.todolist.todo_list" target="_blank" class="btn">Get on Google Play</a>
+                        <button class="btn btn-outline" onclick="toggleDesc('desc-todo', this)">Read More</button>
+                    </div>
+                    <span class="privacy-link">Privacy: <a href="https://01nimantha.github.io/Todo-List-Privacy-Policy/" target="_blank">View Policy</a></span>
+                </div>
+
+                <!-- APP 4: VRNT Engineers -->
+                <div class="app-card">
+                    <div class="app-icon">🏗️</div>
+                    <h3>VRNT Engineers</h3>
+                    <p class="short-desc">Professional invoicing & estimation tool tailored for construction businesses.</p>
+                    <div class="full-desc" id="desc-vrnt">
+                        <strong>Full Description:</strong><br>
+                        VRNT Engineers is a comprehensive, easy-to-use mobile application designed specifically for construction professionals, contractors, and engineers to streamline their invoicing and estimation workflows.<br><br>
+                        Managing your construction projects has never been easier. Whether you're on the job site or in the office, VRNT Engineers provides all the essential tools you need to create, manage, and share professional invoices with your clients in seconds.<br><br>
+                        <strong>Key Features:</strong><br>
+                        📄 Professional PDF Invoices — Generate detailed PDF invoices directly from your device. Share via WhatsApp with a single tap.<br>
+                        🛠️ Custom Categories & Flexible Pricing — Manage materials and labor costs. Create dynamic custom categories with specific items, unit prices, and quantities (e.g., Roofing, Masonry, Plumbing).<br>
+                        🏦 Streamlined Bank Details — Configure and save your bank account and branch information in app settings.<br>
+                        ☁️ Secure Cloud Authentication — Your account is protected with state-of-the-art secure cloud authentication.<br>
+                        📶 Offline Support & Reliability — Keep working even when you lose internet connection. Robust local storage ensures data is saved securely on your device.<br>
+                        📊 Invoice History & Tracking — Keep track of all past invoices in a centralized history dashboard. Quickly retrieve, review, or resend past estimates.<br>
+                        📅 Calendar Integration — Organize tasks and keep track of important project dates with the built-in calendar view.<br><br>
+                        <strong>Who is this app for?</strong> Construction professionals, contractors, engineers, and builders.
+                    </div>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.vrnt.engineers" target="_blank" class="btn">Get on Google Play</a>
+                        <button class="btn btn-outline" onclick="toggleDesc('desc-vrnt', this)">Read More</button>
+                    </div>
+                    <span class="privacy-link">Privacy: <a href="https://01nimantha.github.io/VRNT-Engineers-Privacy-Policy/" target="_blank">View Policy</a></span>
                 </div>
 
             </div>
@@ -286,7 +468,7 @@
 
     </div>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="contact-content">
             <h2 class="section-title" style="text-align: center; border: none;">Contact Us</h2>
@@ -305,12 +487,34 @@
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2024 Madhushan Studios. All rights reserved.</p>
+        
+        <div class="footer-privacy-list">
+            <a href="https://01nimantha.github.io/Cat-Tap-Hunt-Kitty-Game-Privacy-Policy/" target="_blank">Cat Tap Hunt Privacy</a>
+            <a href="https://01ruwantha.github.io/calculator-privacy-policy/" target="_blank">Calculator Privacy</a>
+            <a href="https://01nimantha.github.io/Todo-List-Privacy-Policy/" target="_blank">Todo List Privacy</a>
+            <a href="https://01nimantha.github.io/VRNT-Engineers-Privacy-Policy/" target="_blank">VRNT Engineers Privacy</a>
+        </div>
+
         <div style="margin-top: 15px;">
-            <!-- You should create a privacy.html file and link it here -->
-            <a href="#">Privacy Policy</a>
             <a href="#about">About</a>
+            <a href="#apps">Apps</a>
+            <a href="#contact">Contact</a>
         </div>
     </footer>
+
+    <!-- JAVASCRIPT FOR READ MORE TOGGLE -->
+    <script>
+        function toggleDesc(id, btn) {
+            const desc = document.getElementById(id);
+            if (desc.classList.contains('open')) {
+                desc.classList.remove('open');
+                btn.textContent = 'Read More';
+            } else {
+                desc.classList.add('open');
+                btn.textContent = 'Show Less';
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - Madhushan Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --primary-dark: #174ea6;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--primary-dark); }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--text-dark); }
+        .nav-links a { margin-left: 20px; color: var(--text-light); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .btn:hover { background-color: var(--primary-dark); color: var(--white); }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline:hover { background-color: var(--primary-color); color: var(--white); }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 25px; font-weight: 500; }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .app-icon-large {
+            width: 100px;
+            height: 100px;
+            background-color: #e8f0fe;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            flex-shrink: 0;
+        }
+        .app-title h1 { font-size: 2rem; margin-bottom: 8px; }
+        .app-title p { color: var(--text-light); font-size: 1.05rem; }
+        .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 25px 0 35px; }
+        .detail-content {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+        .detail-content strong { color: var(--text-dark); }
+        .detail-content h3 {
+            color: var(--text-dark);
+            margin: 28px 0 12px;
+            font-size: 1.25rem;
+        }
+        .detail-content h3:first-child { margin-top: 0; }
+        .privacy-box {
+            margin-top: 30px;
+            padding: 18px;
+            background: #f1f3f4;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        footer {
+            background-color: #202124;
+            color: #9aa0a6;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        footer a { color: #9aa0a6; margin: 0 10px; }
+        footer a:hover { color: var(--white); }
+        @media (max-width: 600px) {
+            .app-header { flex-direction: column; align-items: flex-start; }
+            .app-title h1 { font-size: 1.6rem; }
+            .detail-content { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Madhushan Studios</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#apps">Apps</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html#apps" class="back-link">← Back to Apps</a>
+
+        <div class="app-header">
+            <div class="app-icon-large">🧮</div>
+            <div class="app-title">
+                <h1>Calculator</h1>
+                <p>Simple & Smart Calculator for Quick and Accurate Calculations.</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.ceynext.calculator_app" target="_blank" class="btn">Get on Google Play</a>
+            <a href="https://01ruwantha.github.io/calculator-privacy-policy/" target="_blank" class="btn btn-outline">Privacy Policy</a>
+        </div>
+
+        <div class="detail-content">
+            <h3>📱 Modern & Responsive Calculator</h3>
+            <p>The Calculator App is a modern, user-friendly, and responsive calculator designed to work seamlessly on both mobile devices and tablets. It combines a clean interface with advanced features like history tracking.</p>
+
+            <p>Built with Flutter, it adapts automatically to different screen sizes:</p>
+            <p>
+                📲 <strong>Mobile layout:</strong> Simple, single-screen design with easy navigation to history.<br>
+                💻 <strong>Tablet layout:</strong> Split-screen mode showing the calculator on one side and the history panel on the other.
+            </p>
+
+            <h3>✨ Key Features</h3>
+            <p>
+                ✅ Basic & Scientific Calculations (+, −, ×, ÷, √, percentages)<br>
+                ✅ Beautiful User Interface (gradient keypad, 3D shadows, dark theme)<br>
+                ✅ Calculation History with Hive Storage (auto-saved, clear with confirmation, refresh support)<br>
+                ✅ Responsive Design (mobile & tablet dual-pane)<br>
+                ✅ Offline First (no internet required, fast & lightweight)<br>
+                ✅ Custom Branding (personalized icon, splash screen)
+            </p>
+
+            <h3>🛠️ Tech Stack</h3>
+            <p>Flutter (Dart), Hive (NoSQL), Math Expressions Package, Responsive UI (LayoutBuilder), Custom Splash & Icons.</p>
+
+            <h3>📊 Example Use Cases</h3>
+            <p>Students solving math problems, professionals doing finance/percentage calculations, anyone needing a fast, reliable calculator with history.</p>
+
+            <h3>🚀 Why Choose This App?</h3>
+            <p>Unlike standard calculators, this app is responsive, offline, stylish, and history-enabled. It helps you stay organized by remembering your past calculations.</p>
+
+            <div class="privacy-box">
+                <strong>Privacy Policy:</strong> 
+                <a href="https://01ruwantha.github.io/calculator-privacy-policy/" target="_blank">View full Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Madhushan Studios. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="index.html#about">About</a>
+            <a href="index.html#apps">Apps</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

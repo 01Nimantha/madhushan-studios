@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhushan Studios - Mobile App Developer</title>
+    <meta name="description" content="Official developer website for Madhushan Studios. We build high-quality Android applications.">
+    
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary-color: #1a73e8; /* Google Blue */
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #174ea6;
+        }
+
+        /* HEADER / NAV */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #174ea6;
+            color: var(--white);
+        }
+
+        /* MAIN CONTENT CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* APPS GRID */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .app-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e8f0fe;
+            border-radius: 20px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .app-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .app-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: var(--white);
+            padding: 60px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #202124;
+            color: #9aa0a6;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #9aa0a6;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Simple hide on mobile for clean look */
+            .nav-container { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Madhushan Studios</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#apps">Apps</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Madhushan Studios</h1>
+        <p>Creating innovative and user-friendly Android applications for everyone.</p>
+        <a href="#apps" class="btn">View Our Apps</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2 class="section-title">About the Developer</h2>
+            <p style="font-size: 1.1rem; color: var(--text-light); max-width: 800px;">
+                Welcome to Madhushan Studios. I am Nimantha Madhushan, an independent Android developer based in Sri Lanka. 
+                My goal is to build high-quality, reliable, and privacy-focused mobile applications. 
+                I focus on clean design and smooth performance to ensure the best user experience.
+            </p>
+        </section>
+        
+        <br><br>
+
+        <!-- APPS SECTION -->
+        <section id="apps">
+            <h2 class="section-title">Our Applications</h2>
+            <div class="apps-grid">
+                
+                <!-- APP CARD 1 (Replace with your real app) -->
+                <div class="app-card">
+                    <div class="app-icon">A</div>
+                    <h3>App Name 1</h3>
+                    <p>Short description of what your app does. E.g., A simple tool to manage your daily tasks efficiently.</p>
+                    <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Coming Soon</a>
+                </div>
+
+                <!-- APP CARD 2 (Replace with your real app) -->
+                <div class="app-card">
+                    <div class="app-icon">B</div>
+                    <h3>App Name 2</h3>
+                    <p>Short description of what your app does. E.g., The best way to track your fitness goals.</p>
+                    <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Coming Soon</a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2 class="section-title" style="text-align: center; border: none;">Contact Us</h2>
+            <p style="color: var(--text-light); margin-bottom: 30px;">
+                If you have any questions, suggestions, or need support regarding our apps, please reach out.
+            </p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:01nimantha@gmail.com">01nimantha@gmail.com</a></p>
+                <p><strong>Location:</strong> Horana, Sri Lanka</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/01nimantha/" target="_blank">View Profile</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Madhushan Studios. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <!-- You should create a privacy.html file and link it here -->
+            <a href="#">Privacy Policy</a>
+            <a href="#about">About</a>
+        </div>
+    </footer>
+
+</body>
+</html>

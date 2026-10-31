@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRNT Engineers - Madhushan Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --primary-dark: #174ea6;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--primary-dark); }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--text-dark); }
+        .nav-links a { margin-left: 20px; color: var(--text-light); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .btn:hover { background-color: var(--primary-dark); color: var(--white); }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline:hover { background-color: var(--primary-color); color: var(--white); }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 25px; font-weight: 500; }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .app-icon-large {
+            width: 100px;
+            height: 100px;
+            background-color: #e8f0fe;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            flex-shrink: 0;
+        }
+        .app-title h1 { font-size: 2rem; margin-bottom: 8px; }
+        .app-title p { color: var(--text-light); font-size: 1.05rem; }
+        .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 25px 0 35px; }
+        .detail-content {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+        .detail-content strong { color: var(--text-dark); }
+        .detail-content h3 {
+            color: var(--text-dark);
+            margin: 28px 0 12px;
+            font-size: 1.25rem;
+        }
+        .detail-content h3:first-child { margin-top: 0; }
+        .privacy-box {
+            margin-top: 30px;
+            padding: 18px;
+            background: #f1f3f4;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        footer {
+            background-color: #202124;
+            color: #9aa0a6;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        footer a { color: #9aa0a6; margin: 0 10px; }
+        footer a:hover { color: var(--white); }
+        @media (max-width: 600px) {
+            .app-header { flex-direction: column; align-items: flex-start; }
+            .app-title h1 { font-size: 1.6rem; }
+            .detail-content { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Madhushan Studios</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#apps">Apps</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html#apps" class="back-link">← Back to Apps</a>
+
+        <div class="app-header">
+            <div class="app-icon-large">🏗️</div>
+            <div class="app-title">
+                <h1>VRNT Engineers</h1>
+                <p>Professional invoicing & estimation tool tailored for construction businesses.</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.vrnt.engineers" target="_blank" class="btn">Get on Google Play</a>
+            <a href="https://01nimantha.github.io/VRNT-Engineers-Privacy-Policy/" target="_blank" class="btn btn-outline">Privacy Policy</a>
+        </div>
+
+        <div class="detail-content">
+            <h3>Comprehensive Tool for Construction Professionals</h3>
+            <p>VRNT Engineers is a comprehensive, easy-to-use mobile application designed specifically for construction professionals, contractors, and engineers to streamline their invoicing and estimation workflows.</p>
+
+            <p>Managing your construction projects has never been easier. Whether you're on the job site or in the office, VRNT Engineers provides all the essential tools you need to create, manage, and share professional invoices with your clients in seconds.</p>
+
+            <h3>Key Features</h3>
+            <p>
+                📄 <strong>Professional PDF Invoices</strong> — Generate detailed PDF invoices directly from your device. Share via WhatsApp with a single tap.<br><br>
+                🛠️ <strong>Custom Categories & Flexible Pricing</strong> — Manage materials and labor costs. Create dynamic custom categories with specific items, unit prices, and quantities (e.g., Roofing, Masonry, Plumbing).<br><br>
+                🏦 <strong>Streamlined Bank Details</strong> — Configure and save your bank account and branch information in app settings.<br><br>
+                ☁️ <strong>Secure Cloud Authentication</strong> — Your account is protected with state-of-the-art secure cloud authentication.<br><br>
+                📶 <strong>Offline Support & Reliability</strong> — Keep working even when you lose internet connection. Robust local storage ensures data is saved securely on your device.<br><br>
+                📊 <strong>Invoice History & Tracking</strong> — Keep track of all past invoices in a centralized history dashboard. Quickly retrieve, review, or resend past estimates.<br><br>
+                📅 <strong>Calendar Integration</strong> — Organize tasks and keep track of important project dates with the built-in calendar view.
+            </p>
+
+            <h3>Who is this app for?</h3>
+            <p>Construction professionals, contractors, engineers, and builders.</p>
+
+            <div class="privacy-box">
+                <strong>Privacy Policy:</strong> 
+                <a href="https://01nimantha.github.io/VRNT-Engineers-Privacy-Policy/" target="_blank">View full Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Madhushan Studios. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="index.html#about">About</a>
+            <a href="index.html#apps">Apps</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
